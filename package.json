@@ -2,6 +2,7 @@
   "name": "my-store-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
@@ -10,7 +11,11 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk:prepare": "cd cdk && npm i",
+    "cdk:bootstrap": "npm run cdk:prepare && npm run build && cd cdk && cdk bootstrap",
+    "cdk:deploy": "npm run cdk:bootstrap && cd cdk && cdk deploy -f",
+    "cdk:destroy": "cd cdk && cdk destroy -f"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -18,7 +23,10 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
     "@mui/styles": "^5.8.7",
+    "@types/node": "^20.14.0",
     "@types/yup": "^0.29.14",
+    "aws-cdk": "^2.144.0",
+    "aws-sdk": "^2.1634.0",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
     "react": "^18.2.0",
@@ -45,7 +53,8 @@
     "jsdom": "^20.0.0",
     "msw": "^0.43.1",
     "prettier": "2.7.1",
-    "typescript": "^4.7.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5",
     "vite": "^2.9.13",
     "vitest": "^0.17.1"
   },

@@ -1,3 +1,18 @@
+# Task 2. Serving SPA
+
+## Task 2.1
+
+Manually createsS3 Bucket with blocked access: <https://nodejs-aws-shop-react-overdd.s3.amazonaws.com/index.html>
+Manually created Cloudfront distribution: <http://d1gyg7vkjdtt6t.cloudfront.net>
+
+## Task 2.2
+
+Automatically created S3 bucket with blocked access: <https://nodejs-aws-shop-react-0f84ab66-2856-4c3d-9f69-7491550dc928.s3.amazonaws.com/index.html>
+Automatically created Cloudfront distribution: <http://d3ogvhqiah48wf.cloudfront.net>
+
+To run an automated deployment:
+### `npm run cdk:deploy`
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
